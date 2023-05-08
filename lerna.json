@@ -1,0 +1,11 @@
+{
+    "version": "0.6.9",
+    "packages": ["packages/*"],
+    "npmClient": "yarn",
+    "useWorkspaces": true,
+    "command": {
+        "bootstrap": {
+            "npmClientArgs": ["--no-optional"]
+        }
+    }
+}

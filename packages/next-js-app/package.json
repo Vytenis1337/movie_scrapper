@@ -1,0 +1,17 @@
+{
+    "name": "next-js-app",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "next-build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "bootstrap": "cd ../.. && yarn bootstrap"
+    },
+    "dependencies": {
+        "next": "13.1.4",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    }
+}

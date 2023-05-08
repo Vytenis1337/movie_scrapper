@@ -1,0 +1,10 @@
+packages/**/node_modules/**
+node_modules
+scripts/
+coverage
+app.playground.js
+type-test.ts
+packages/**/dist/**
+packages/**/lib/**
+**/platformAssets/**
+**/platformBuilds/**

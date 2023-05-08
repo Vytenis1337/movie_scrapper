@@ -1,0 +1,62 @@
+{
+    "name": "academy-template",
+    "private": true,
+    "scripts": {
+        "build": "lerna run build",
+        "lint": "npx eslint ./packages",
+        "bootstrap": "npx lerna bootstrap && yarn build && npx jetify",
+        "bootstrap-clean": "rm -rf ./node_modules; npx lerna clean --yes && yarn bootstrap",
+        "tsc": "tsc --build",
+        "test": "jest --coverage",
+        "postinstall": "node copy"
+    },
+    "devDependencies": {
+        "typescript": "4.5.4",
+        "@types/jest": "^27.0.2",
+        "@types/node": "^18.11.18",
+        "@types/react": "18.0.27",
+        "@types/react-dom": "18.0.10",
+        "@types/lodash-es": "4.17.5",
+        "@typescript-eslint/eslint-plugin": "^5.4.0",
+        "@typescript-eslint/parser": "^5.4.0",
+        "eslint": "^8.2.0",
+        "eslint-config-prettier": "^8.0.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "jest": "^27.3.1",
+        "ts-jest": "^27.0.7",
+        "lint-staged": "8.1.0",
+        "rnv": "0.34.0",
+        "lerna": "4.0.0",
+        "prettier": "^2.3.1",
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.14.3",
+        "@babel/plugin-proposal-class-properties": "7.10.4",
+        "@babel/plugin-proposal-object-rest-spread": "7.11.0",
+        "@babel/preset-env": "^7.12.1",
+        "@babel/preset-react": "7.10.4",
+        "@babel/preset-typescript": "^7.13.0",
+        "@babel/runtime": "7.8.3",
+        "webpack-dev-server": "3.11.2"
+    },
+    "resolutions": {},
+    "lint-staged": {
+        "*.ts": [
+            "eslint"
+        ]
+    },
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ],
+        "nohoist": [
+            "react-native",
+            "**/@types",
+            "metro",
+            "**/@types/**",
+            "**/@react-native-community",
+            "**/@react-native-community/**",
+            "react-native-codegen",
+            "**/react-native-codegen"
+        ]
+    }
+}
