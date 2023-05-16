@@ -19,6 +19,8 @@ export async function scrappeImdb() {
 
     const browser: Browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
+
+    await page.goto('https://www.imdb.com/chart/top');
     const movies = await page.$$eval('.lister-list tr', (rows) => {
         return rows.map((row: any) => {
             const titleElement = row.querySelector('.titleColumn a');
@@ -34,6 +36,8 @@ export async function scrappeImdb() {
             return { title, rank, rating, year };
         });
     });
+
+    console.log(movies);
 
     // Close the Puppeteer browser
     await browser.close();
