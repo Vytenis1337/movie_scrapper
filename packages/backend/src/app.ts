@@ -1,7 +1,7 @@
 import movieModel from './models/movie.model';
 import { Request, Response } from 'express';
 import { decode, encode } from 'js-base64';
-import { scrappeImdb } from './scrappers/imdbScrapper';
+import { run, scrappeImdb } from './scrappers/imdbScrapper';
 const express = require('express');
 
 const mongoose = require('mongoose');
@@ -24,16 +24,33 @@ const connect = async () => {
 };
 
 app.post('/movies', (req: Request, res: Response) => {
-    const movies = req.body;
-    movieModel
-        .insertMany(movies)
+    // const movies = req.body;
+    // movieModel
+    //     .insertMany(movies)
+    //     .then(() => {
+    //         res.send('Movies saved successfully');
+    //     })
+    //     .catch((err: any) => {
+    //         console.error(err);
+    //         res.status(500).send('Error saving movies to database');
+    //     });
+    const movieData = req.body;
+    console.log(movieData); // Do something with the movie data
+
+    // Create a new Movie instance
+    const movie = new movieModel(movieData);
+
+    // Save the movie to MongoDB
+    movie
+        .save()
         .then(() => {
-            res.send('Movies saved successfully');
+            console.log('Movie added to MongoDB');
         })
-        .catch((err: any) => {
-            console.error(err);
-            res.status(500).send('Error saving movies to database');
+        .catch((error: any) => {
+            console.error('Error adding movie to MongoDB:', error);
         });
+
+    res.send('Movie data received');
 });
 
 app.get('/', (req: Request, res: Response) => {
@@ -45,7 +62,7 @@ app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
 
-scrappeImdb();
+// scrappeImdb();
 
 // async function run() {
 //     const globalAny: any = global;
@@ -83,3 +100,4 @@ scrappeImdb();
 // }
 
 // run();
+run();
