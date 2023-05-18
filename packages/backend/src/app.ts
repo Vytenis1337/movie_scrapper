@@ -1,7 +1,7 @@
 import movieModel from './models/movie.model';
 import { Request, Response } from 'express';
-import { decode, encode } from 'js-base64';
-import { run, scrappeImdb } from './scrappers/imdbScrapper';
+
+import { imdbTopListScrapper } from './scrappers/imdbTopListScrapper';
 const express = require('express');
 
 const mongoose = require('mongoose');
@@ -62,42 +62,4 @@ app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
 
-// scrappeImdb();
-
-// async function run() {
-//     const globalAny: any = global;
-
-//     if (!globalAny.btoa) {
-//         globalAny.btoa = encode;
-//     }
-
-//     if (!globalAny.atob) {
-//         globalAny.atob = decode;
-//     }
-//     // Launch Puppeteer browser
-//     const browser = await puppeteer.launch({ headless: false });
-
-//     // Create a new page
-//     const page = await browser.newPage();
-
-//     // Navigate to IMDb's Top 250 list
-//     await page.goto('https://www.imdb.com/chart/top');
-
-//     // Scrape the trailer links
-//     const trailerLinks = await page.$$eval('.lister-list tr', (rows: any) => {
-//         return rows.map((row: any) => {
-//             const linkElement = row.querySelector('.titleColumn a');
-//             const trailerUrl = linkElement.href + 'videogallery';
-
-//             return trailerUrl;
-//         });
-//     });
-
-//     // Close the Puppeteer browser
-//     await browser.close();
-
-//     console.log(trailerLinks);
-// }
-
-// run();
-run();
+imdbTopListScrapper();

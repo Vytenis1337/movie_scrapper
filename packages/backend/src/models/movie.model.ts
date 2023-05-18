@@ -8,10 +8,10 @@ const movieSchema = new mongoose.Schema({
     genres: {
         type: [String],
     },
-    // videoUrl: {
-    //     type: String,
-    //     required: true,
-    // },
+    videoUrl: {
+        type: String,
+        required: true,
+    },
     posterUrl: {
         type: String,
         required: true,
