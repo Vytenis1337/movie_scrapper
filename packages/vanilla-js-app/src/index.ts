@@ -1,9 +1,9 @@
 import './index.scss';
 
-function component() {
-    const element = document.createElement('div');
-    element.innerHTML = 'Hello World!';
-    return element;
-}
+const loginButton = document.querySelector('login-button');
 
-document.body.appendChild(component());
+console.log('hello!');
+
+loginButton.addEventListener('click', function () {
+    console.log('button clicked!');
+});

@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <link rel="stylesheet" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    <%= htmlWebpackPlugin.options.title %>
-  </title>
-</head>
+        <!-- styles -->
+        <link rel="stylesheet" href="src/styles.css" />
+    </head>
 
-<body>
-    <main>
-        <div id="app">
-        </div>
-      </main>
-</body>
-
+    <body>
+        <main>
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li><a href="#library">My Library</a></li>
+                    <li>
+                        <a href="#login"> <button class="login-button">Login</button> </a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="click">CLICK MEee</button>
+            <div id="app">Hello World!</div>
+            <div class="login"></div>
+        </main>
+        <script src="src/index.ts"></script>
+    </body>
 </html>

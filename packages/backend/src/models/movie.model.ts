@@ -10,7 +10,6 @@ const movieSchema = new mongoose.Schema({
     },
     videoUrl: {
         type: String,
-        required: true,
     },
     posterUrl: {
         type: String,
@@ -32,10 +31,10 @@ const movieSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    // year: {
-    //     type: String,
-    //     required: true,
-    // },
+    year: {
+        type: String,
+        required: true,
+    },
 });
 
 export default mongoose.model('Movie', movieSchema);

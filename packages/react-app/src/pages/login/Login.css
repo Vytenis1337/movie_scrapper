@@ -1,0 +1,67 @@
+.login-form {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-form-title {
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.login-form-title span {
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    font-size: 1em;
+    font-weight: bold;
+    color: #059f86;
+}
+.login-form-req {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login-input {
+    width: 250px;
+    height: 30px;
+    margin: 5px;
+}
+.login-button {
+    margin: 10px;
+    padding: 20px;
+    width: max-content;
+    height: 40px;
+    border: none;
+    background-color: #059f86;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.login-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+.goToRegister-button {
+    margin: 10px;
+    width: max-content;
+    height: 40px;
+    border: #000000;
+    border: solid;
+    background-color: #ffffff;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.goToRegister-button:hover {
+    transform: scale(1.1);
+}
