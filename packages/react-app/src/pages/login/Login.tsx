@@ -2,12 +2,13 @@ import './Login.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase/firebase';
 
 export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
 
     const navitage = useNavigate();
 
@@ -17,14 +18,14 @@ export const Login = () => {
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log(userCredential);
                 localStorage.setItem('currentUser', JSON.stringify(userCredential.user.email));
+                localStorage.setItem('currentUserId', JSON.stringify(userCredential.user.uid));
 
-                console.log(userCredential.user);
-
-                navitage('/');
+                navitage('/movies');
             })
-            .catch((error) => {});
+            .catch((error) => {
+                setError(error.response.data);
+            });
     };
 
     const goToRegister = (e: { preventDefault: () => void }) => {
@@ -32,33 +33,39 @@ export const Login = () => {
     };
 
     return (
-        <div>
-            <form className="login-form">
-                <p className="login-form-title">
-                    {' '}
-                    <span>Login</span>
-                    Form
-                </p>
-                <p className="login-form-req">Register or Login to see Todo List!</p>
+        <div className="login-page">
+            <form className="login-form" onSubmit={handleLogin}>
+                <h1 className="login-h1">Login</h1>
+                <label className="login-label" htmlFor="">
+                    Email
+                </label>
                 <input
                     className="login-input"
+                    name="email"
                     type="email"
-                    placeholder="email"
+                    placeholder="user@user.com"
                     onChange={(e) => setEmail(e.target.value)}
                 />
+
+                <label className="login-label" htmlFor="">
+                    Password
+                </label>
                 <input
                     className="login-input"
+                    name="password"
                     type="password"
-                    placeholder="password"
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit" onClick={handleLogin} className="login-button">
+                <button className="login-button" type="submit">
                     Login
                 </button>
-                <button type="button" onClick={goToRegister} className="goToRegister-button">
-                    Go to Register
-                </button>
-                {/* {error && <span className='main-span'>Wrong email or password!</span>} */}
+                {error && error}
+                <p>
+                    Don't have an account yet?{' '}
+                    <Link to="/register">
+                        <span>Register</span>
+                    </Link>
+                </p>
             </form>
         </div>
     );

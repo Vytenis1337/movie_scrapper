@@ -1,0 +1,143 @@
+.library-card {
+    display: flex;
+    margin: 5px;
+    border-radius: 4px;
+    background: transparent;
+    max-height: 250px;
+    overflow: hidden;
+    background: linear-gradient(#141e30, #243b55);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border: 2px solid #d98e20;
+    width: 100%;
+}
+
+.library-card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.library-img {
+    min-width: 150px;
+    max-height: 200px;
+}
+
+.library-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.library-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d98e20;
+    font-family: 'Share Tech Mono', monospace;
+}
+.library-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.library-button-details {
+    background-color: #ffd700;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: black 4px 4px 0 0;
+    color: black;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    width: max-content;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border: 1px solid transparent;
+}
+
+.library-button-remove {
+    background-color: #f95959;
+    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: black 4px 4px 0 0;
+    color: black;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    width: max-content;
+    margin: 10px auto;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border: 1px solid transparent;
+}
+.library-button-details:hover {
+    border: 1px solid white;
+
+    color: black;
+}
+
+.library-button-remove:hover {
+    border: 1px solid white;
+
+    color: black;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .library-body {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .library-body {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .library-body {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 651px) and (max-width: 767px) {
+    .library-body {
+        padding: 2px;
+    }
+    .library-button {
+        margin: 5px auto;
+    }
+    .library-img {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .library-body {
+        padding: 2px;
+    }
+    .library-button {
+        margin: 5px auto;
+    }
+    .library-img {
+        height: 250px;
+    }
+    .library-card {
+        height: max-content;
+    }
+}

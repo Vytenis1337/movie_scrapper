@@ -17,7 +17,7 @@ export const MovieCard = ({ movieId, title, posterUrl, videoUrl, summary, rating
         <div className="movie-card">
             <div className="movie-body">
                 <Link
-                    to={`/movies/single/${movieId}`}
+                    to={`/movies/${movieId}`}
                     state={{
                         movieId,
                         title,
@@ -39,7 +39,6 @@ export const MovieCard = ({ movieId, title, posterUrl, videoUrl, summary, rating
                         alt={title}
                     />
                 </Link>
-                <div>{genres}</div>
             </div>
         </div>
     );

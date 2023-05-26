@@ -3,6 +3,8 @@ import { Request, Response } from 'express';
 
 import { imdbTopListScrapper } from './scrappers/imdbTopListScrapper';
 import movieRoute from './routes/movie.route';
+import libraryRoute from './routes/library.route';
+import { testScrapper } from './scrappers/testScrappe';
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -27,6 +29,7 @@ const connect = async () => {
 };
 
 app.use('/api', movieRoute);
+app.use('/api', libraryRoute);
 
 // app.post('/movies', (req: Request, res: Response) => {
 
@@ -60,3 +63,5 @@ app.listen(port, () => {
 });
 
 // imdbTopListScrapper();
+
+// testScrapper('tt0056058');

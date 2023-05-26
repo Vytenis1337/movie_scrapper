@@ -1,3 +1,4 @@
+import { decode, encode } from 'js-base64';
 import { Browser } from 'puppeteer';
 
 const puppeteer = require('puppeteer');
@@ -15,7 +16,17 @@ export interface Product {
     videoUrl: string;
 }
 
-export async function imdbSingleScrapper(movieId: any) {
+export async function testScrapper(movieId: any) {
+    const globalAny: any = global;
+
+    if (!globalAny.btoa) {
+        globalAny.btoa = encode;
+    }
+
+    if (!globalAny.atob) {
+        globalAny.atob = decode;
+    }
+
     const movieData = {} as Product;
 
     // Launch Puppeteer browser
@@ -27,8 +38,7 @@ export async function imdbSingleScrapper(movieId: any) {
     // Create a new page
     const page = await browser.newPage();
 
-    // Navigate to the movie page
-    await page.goto(`https://www.imdb.com/title/${movieId}`, { waitUntil: 'networkidle2' });
+    await page.goto(`https://www.imdb.com/title/tt0056058`, { waitUntil: 'networkidle2' });
 
     // Wait for the movie details to load
     await page.waitForSelector('.sc-afe43def-0').catch((err: any) => console.log(err));
@@ -52,29 +62,29 @@ export async function imdbSingleScrapper(movieId: any) {
 
     movieData.summary = await page.$eval('.sc-2eb29e65-3', (element: any) => element.textContent.trim());
 
-    const check = async (page: {
-        $eval: any;
-        waitForSelector: any;
-        waitForTimeout: any;
-        click: any;
-        hover: any;
-        $: (arg0: any) => any;
-    }) => {
-        if ((await page.$('.sc-385ac629-8')) !== null) {
-            await page.hover('.sc-385ac629-8');
+    movieData.videoUrl = await page.evaluate(async (page) => {
+        const videoLink: any = document.querySelector('.sc-385ac629-8');
 
-            await page.click('.sc-385ac629-8');
+        if (videoLink) {
+            try {
+                await videoLink.hover();
 
-            await page.waitForTimeout(1000);
+                await videoLink.click();
 
-            await page.waitForSelector('.jw-media video').catch((err: any) => console.log(err));
-            return await page.$eval('.jw-media video', (element: any) => element.src);
+                await page.waitForTimeout(1000);
+
+                await page.waitForSelector('.jw-media video').catch((err: any) => console.log(err));
+                return await page.$eval('.jw-media video', (element: any) => element.src);
+            } catch (error) {
+                console.log(error);
+            }
         }
         return '';
-    };
-    movieData.videoUrl = await check(page);
+    }, page);
 
     await browser.close();
+
+    console.log(movieData);
 
     return movieData;
 }

@@ -2,53 +2,65 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './Register.css';
 import { auth } from '../../firebase/firebase';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Register = () => {
     const [registerEmail, setRegisterEmail] = useState('');
     const [registerPassword, setRegisterPassword] = useState('');
+    const [err, setError] = useState(null);
 
     const navitage = useNavigate();
-    const handleRegister = (e: { preventDefault: () => void }) => {
+    const handleRegister = async (e: { preventDefault: () => void }) => {
         e.preventDefault();
-        createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
-            .then((userCredential) => {
-                // Signed in
+        try {
+            await createUserWithEmailAndPassword(auth, registerEmail, registerPassword).then((userCredential) => {
+                console.log(userCredential);
 
-                navitage('/');
-            })
-            .catch((error) => {});
-    };
-    const goToLogin = (e: { preventDefault: () => void }) => {
-        e.preventDefault();
+                navitage('/movies');
+            });
+        } catch (error: any) {
+            setError(error.response.data);
+        }
     };
 
     return (
-        <div>
-            <form className="register-form">
-                <p className="register-form-title">
-                    <span>Register</span> Form
-                </p>
-                <p className="register-form-req">Register or Login to see Todo List!</p>
+        <div className="auth">
+            <form className="auth-form">
+                <h1 className="auth-h1">Register</h1>
+
+                <label className="auth-label" htmlFor="">
+                    Email
+                </label>
                 <input
-                    className="register-input"
+                    className="auth-input"
+                    required
                     type="email"
-                    placeholder="register email"
+                    placeholder="email"
+                    name="email"
                     onChange={(e) => setRegisterEmail(e.target.value)}
                 />
+
+                <label className="auth-label" htmlFor="">
+                    Password
+                </label>
                 <input
-                    className="register-input"
+                    className="auth-input"
+                    required
                     type="password"
-                    placeholder="register password"
+                    placeholder="password"
+                    name="password"
                     onChange={(e) => setRegisterPassword(e.target.value)}
                 />
-                <button type="submit" onClick={handleRegister} className="register-button">
+                <button className="auth-button" onClick={handleRegister}>
                     Register
                 </button>
-                <button type="button" onClick={goToLogin} className="goToLogin-button">
-                    Back to Login
-                </button>
-                {/* {error && <span className='main-span'>Wrong email or password!</span>} */}
+                {err && <p>{err}</p>}
+                <p>
+                    Do you have an account?{' '}
+                    <Link to="/login">
+                        <span>Login</span>
+                    </Link>
+                </p>
             </form>
         </div>
     );

@@ -7,6 +7,8 @@ import { FaCity } from 'react-icons/fa';
 // import { mobileSocialIcons } from '../../utils/socialIcons';
 // import { SocialIcon } from '../SocialIcon/SocialIcon';
 import { useRef } from 'react';
+import { auth } from '../../firebase/firebase';
+
 // import { useOutsideClick } from '../../hooks/useOutsideClick';
 // import { useEscapeKey } from '../../hooks/useEscapeKey';
 
@@ -33,16 +35,19 @@ export const Navbar = () => {
     //     refetch();
     //   }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    //   const handleLogout = async () => {
-    //     try {
-    //       await newRequest.post('/auth/logout');
-    //       localStorage.setItem('currentUser', null!);
+    const handleLogout = async () => {
+        try {
+            auth.signOut().then(() => {
+                console.log('Signed Out');
+                localStorage.setItem('currentUser', null!);
+                localStorage.setItem('currentUserId', null!);
 
-    //       navigate('/');
-    //     } catch (err) {
-    //       console.log(err);
-    //     }
-    //   };
+                navigate('/movies');
+            });
+        } catch (error) {
+            console.error('Sign Out Error', error);
+        }
+    };
     const handleCloseLogin = () => setOpen(false);
     const handleCloseMenu = () => setIsNavExpanded(false);
 
@@ -91,7 +96,7 @@ export const Navbar = () => {
                         </Link>
                     </li>
 
-                    <li>
+                    {/* <li>
                         <Link
                             className="navbar-menu-link"
                             to="/contacts"
@@ -101,18 +106,14 @@ export const Navbar = () => {
                         >
                             Contacts
                         </Link>
-                    </li>
+                    </li> */}
 
                     <>
                         {currentUser ? (
                             <div className="navbar-login" onClick={() => setOpen(!open)}>
-                                <div className="username">{currentUser}</div>
+                                <div className="username">{currentUser?.substring(0, 1)}</div>
                                 {open && (
-                                    <div
-                                        ref={modalRef}
-                                        className="user-options"
-                                        // onClick={handleLogout}
-                                    >
+                                    <div ref={modalRef} className="user-options" onClick={handleLogout}>
                                         Logout
                                     </div>
                                 )}

@@ -1,18 +1,20 @@
 .navbar {
     height: 60px;
-    width: 100%;
+    width: 50%;
+    margin: 20px auto;
     display: flex;
     align-items: center;
-    background: linear-gradient(#141e30, #243b55);
+    background: transparent;
     top: 0;
     padding: 0.3rem 0rem;
-
+    border: 2px solid #f1c40f;
+    border-radius: 5px;
     box-shadow: 0 1px 1px 1px rgba(9, 9, 9, 0.29);
 }
 
 .navbar-logo {
     text-decoration: none;
-    color: #ffd700;
+    color: #d98e20;
     font-size: 1.5rem;
     margin-left: 0.8rem;
 }
@@ -35,6 +37,7 @@
 
 .navbar-menu-link {
     text-decoration: none;
+    font-family: 'Share Tech Mono', monospace;
     padding: 0 20px;
     font-size: 20px;
     color: white;
@@ -42,6 +45,7 @@
 
 .navbar-menu-library-link {
     text-decoration: none;
+    font-family: 'Share Tech Mono', monospace;
     display: flex;
     padding: 0 20px;
     font-size: 20px;
@@ -91,24 +95,24 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: white;
+    background-color: transparent;
     text-decoration: none;
-    border: 2px solid #ffd700;
+    border: 2px solid #d98e20;
     cursor: pointer;
     transform: translateY(-10px);
 }
 
 .username {
-    color: black;
+    color: white;
     font-size: 40px;
-    transform: translateX(15px);
+    transform: translateY(-5px);
 }
 
 .user-options {
     position: absolute;
     top: 50px;
     right: 0;
-    padding: 20px;
+    padding: 10px;
     background-color: white;
     border-radius: 10px;
     z-index: 999;
