@@ -4,12 +4,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home Page</title>
+        <title>Login Page</title>
         <link rel="stylesheet" />
 
         <!-- styles -->
 
-        <link rel="stylesheet" href="./src/css/styles.css" />
+        <link rel="stylesheet" href="/src/css/styles.css" />
     </head>
 
     <body>
@@ -28,10 +28,17 @@
                     </li>
                 </ul>
             </nav>
-            <div class="category-list"></div>
-            <input type="text" class="search-input" />
-            <button class="search-button">Search Movies</button>
-            <div class="item-list"></div>
+            <form id="login-form">
+                <input type="email" id="email" placeholder="Email" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <button type="submit">Login</button>
+            </form>
+            <button id="logout">LogOut</button>
         </main>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+
+        <script src="/login.bundle.js"></script>
     </body>
 </html>

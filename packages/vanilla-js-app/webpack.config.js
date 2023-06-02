@@ -7,6 +7,9 @@ module.exports = (env, argv) => {
     return {
         entry: {
             main: './src/index.ts',
+            login: './src/login.ts',
+            movie: './src/movie.ts',
+            library: './src/library.ts',
         },
         devtool: 'inline-source-map',
         plugins: [
@@ -16,6 +19,26 @@ module.exports = (env, argv) => {
             new HtmlWebpackPlugin({
                 title: isDevelopment ? 'Development Build' : 'Production Build',
                 template: './src/index.html',
+                filename: './index.html',
+                chunks: ['main'],
+            }),
+            new HtmlWebpackPlugin({
+                title: isDevelopment ? 'Development Build' : 'Production Build',
+                template: './src/login.html',
+                filename: './login.html',
+                chunks: ['login'],
+            }),
+            new HtmlWebpackPlugin({
+                title: isDevelopment ? 'Development Build' : 'Production Build',
+                template: './src/movie.html',
+                filename: './movie.html',
+                chunks: ['movie'],
+            }),
+            new HtmlWebpackPlugin({
+                title: isDevelopment ? 'Development Build' : 'Production Build',
+                template: './src/library.html',
+                filename: './library.html',
+                chunks: ['library'],
             }),
         ],
         output: {

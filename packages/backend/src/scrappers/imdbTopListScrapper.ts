@@ -118,7 +118,7 @@ export async function imdbTopListScrapper() {
 
         // Call the API's POST endpoint to send the movie data
         try {
-            const response = await axios.post('http://localhost:8800/api/movies', movieData);
+            const response = await axios.post('http://localhost:8000/api/movies', movieData);
             console.log(response.data);
         } catch (error: any) {
             console.error('Error calling API:', error.message);

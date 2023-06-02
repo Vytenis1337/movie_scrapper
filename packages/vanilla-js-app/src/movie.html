@@ -9,7 +9,7 @@
 
         <!-- styles -->
 
-        <link rel="stylesheet" href="./src/css/styles.css" />
+        <link rel="stylesheet" href="./css/styles.css" />
     </head>
 
     <body>
@@ -28,10 +28,25 @@
                     </li>
                 </ul>
             </nav>
-            <div class="category-list"></div>
-            <input type="text" class="search-input" />
-            <button class="search-button">Search Movies</button>
-            <div class="item-list"></div>
+            <div class="movie-details"></div>
+            <button class="open-modal">Open Modal</button>
+
+            <!-- The modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <!-- Embed the video using an iframe -->
+                    <iframe
+                        id="videoPlayer"
+                        width="100%"
+                        height="400px"
+                        src=""
+                        frameborder="0"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+            <button class="library-button">Add to Library</button>
         </main>
+        <script src="/movie.bundle.js"></script>
     </body>
 </html>

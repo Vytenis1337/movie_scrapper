@@ -25,6 +25,7 @@ export const createMovie = async (req: Request, res: Response) => {
 export const getMovie = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const movie = await movieModel.findById(req.params.id);
+
         if (!movie) res.status(404);
         res.status(200).send(movie);
     } catch (err) {
@@ -34,8 +35,10 @@ export const getMovie = async (req: Request, res: Response, next: NextFunction) 
 
 export const getMovies = async (req: Request, res: Response) => {
     const q: any = req.query;
+    console.log(req.query);
+
     const filters = {
-        ...(q.genres && { genres: q.genres }),
+        ...(q.genres && { genres: { $in: [q.genres] } }),
 
         ...(q.search && { title: { $regex: q.search, $options: 'i' } }),
     };

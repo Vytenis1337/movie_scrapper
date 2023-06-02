@@ -3,6 +3,7 @@ import libraryModel from '../models/library.model';
 import movieModel from '../models/movie.model';
 
 export const createLibrary = async (req: Request, res: Response, next: NextFunction) => {
+    console.log(req.body);
     const newLibrary = new libraryModel({
         ...req.body,
     });

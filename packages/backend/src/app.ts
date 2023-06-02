@@ -5,6 +5,7 @@ import { imdbTopListScrapper } from './scrappers/imdbTopListScrapper';
 import movieRoute from './routes/movie.route';
 import libraryRoute from './routes/library.route';
 import { testScrapper } from './scrappers/testScrappe';
+import bodyParser from 'body-parser';
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -12,8 +13,9 @@ const mongoose = require('mongoose');
 const app = express();
 
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
-const port = 8800;
+app.use(bodyParser.json());
+app.use(cors({ origin: 'http://localhost:8080', credentials: true }));
+const port = 8000;
 
 mongoose.set('strictQuery', true);
 

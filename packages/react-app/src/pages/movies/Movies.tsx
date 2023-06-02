@@ -23,10 +23,10 @@ export const Movies = () => {
 
     const getFilteredList = () => {
         if (!selectedCategory) {
-            return data;
+            return visibleResults;
         }
 
-        return data.filter((item: { genres: any }) => item.genres.includes(selectedCategory));
+        return visibleResults.filter((item: { genres: any }) => item.genres.includes(selectedCategory));
     };
 
     let filteredList: any = useMemo(getFilteredList, [selectedCategory, data]);
@@ -62,8 +62,8 @@ export const Movies = () => {
                         ?.map((movie: MovieCardProps) => (
                             <MovieCard key={movie.movieId} {...movie} />
                         ))}
-                    {/* <button onClick={pagination.previous}>prev</button>
-                    <button onClick={pagination.next}>next</button> */}
+                    <button onClick={pagination.previous}>prev</button>
+                    <button onClick={pagination.next}>next</button>
                 </div>
             )}
         </div>
