@@ -8,6 +8,7 @@ module.exports = (env, argv) => {
         entry: {
             main: './src/index.ts',
             login: './src/login.ts',
+            register: './src/register.ts',
             movie: './src/movie.ts',
             library: './src/library.ts',
         },
@@ -27,6 +28,13 @@ module.exports = (env, argv) => {
                 template: './src/login.html',
                 filename: './login.html',
                 chunks: ['login'],
+            }),
+
+            new HtmlWebpackPlugin({
+                title: isDevelopment ? 'Development Build' : 'Production Build',
+                template: './src/register.html',
+                filename: './register.html',
+                chunks: ['register'],
             }),
             new HtmlWebpackPlugin({
                 title: isDevelopment ? 'Development Build' : 'Production Build',

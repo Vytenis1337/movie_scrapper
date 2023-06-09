@@ -1,5 +1,3 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-
 const itemList = document.querySelector('.item-list');
 const categoryList = document.querySelector('.category-list');
 const searchInput: any = document.querySelector('.search-input');

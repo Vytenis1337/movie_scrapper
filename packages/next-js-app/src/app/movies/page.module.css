@@ -1,0 +1,22 @@
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.card_container {
+    display: flex;
+    /* position: absolute; */
+    width: 100%;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 200px;
+}

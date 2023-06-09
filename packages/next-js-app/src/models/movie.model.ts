@@ -1,15 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const librarySchema = new mongoose.Schema({
-    userId: {
-        type: String,
-        required: true,
-    },
-    _id: {
-        type: String,
-        required: true,
-    },
+const { Schema } = mongoose;
 
+const MovieSchema = new Schema({
     movieId: {
         type: String,
         required: true,
@@ -34,7 +27,10 @@ const librarySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-
+    // rank: {
+    //     type: Number,
+    //     required: true,
+    // },
     rating: {
         type: Number,
         required: true,
@@ -45,4 +41,6 @@ const librarySchema = new mongoose.Schema({
     },
 });
 
-export default mongoose.model('Library', librarySchema);
+const modelName = mongoose.models.Movie || mongoose.model('Movie', MovieSchema);
+
+export default modelName;

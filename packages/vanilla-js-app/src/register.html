@@ -4,12 +4,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home Page</title>
+        <title>Login Page</title>
         <link rel="stylesheet" />
 
         <!-- styles -->
 
-        <link rel="stylesheet" href="./src/css/styles.css" />
+        <link rel="stylesheet" href="/src/css/styles.css" />
     </head>
 
     <body>
@@ -28,11 +28,17 @@
                     </li>
                 </ul>
             </nav>
+            <form id="register-form">
+                <input type="email" id="register-email" placeholder="Email" required />
+                <input type="password" id="register-password" placeholder="Password" required />
+                <button type="submit">Register</button>
+            </form>
 
-            <div class="category-list"></div>
-            <input type="text" class="search-input" />
-            <button class="search-button">Search Movies</button>
-            <div class="item-list"></div>
+            <p>
+                have an account already? <span> <a href="/src/login.html">Login</a></span>
+            </p>
         </main>
+
+        <script src="/register.bundle.js"></script>
     </body>
 </html>

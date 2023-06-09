@@ -23,6 +23,7 @@ export const createMovie = async (req: Request, res: Response) => {
 };
 
 export const getMovie = async (req: Request, res: Response, next: NextFunction) => {
+    console.log(req.params);
     try {
         const movie = await movieModel.findById(req.params.id);
 

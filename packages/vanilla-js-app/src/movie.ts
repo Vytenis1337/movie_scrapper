@@ -1,7 +1,7 @@
 const movieDetails = document.querySelector('.movie-details');
 const libraryButton = document.querySelector('.library-button');
 // Get the movieId from the URL query parameters
-const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window?.location?.search);
 const movieId = urlParams.get('movieId');
 
 const openModal = document.querySelector('.open-modal');
@@ -12,11 +12,15 @@ const videoPlayer: any = document.getElementById('videoPlayer');
 
 console.log(movieId);
 
+const currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+const currentUserId = JSON.parse(localStorage.getItem('currentUserId') as any);
+
 // Fetch movie details based on the movieId
 function fetchSingleMovie() {
     fetch(`http://localhost:8000/api/movies/${movieId}`)
         .then((response) => response.json())
         .then((movie) => {
+            movieDetails.innerHTML = '';
             // Display the movie details on the page
 
             const movieTitle = document.createElement('h2');
@@ -44,6 +48,40 @@ function fetchSingleMovie() {
             movieSummary.classList.add('single-summary');
             movieSummary.textContent = movie.summary;
             movieDetails.appendChild(movieSummary);
+
+            const handlePostButtonClick = () => {
+                const payload = {
+                    userId: currentUserId,
+                    year: movie.year,
+                    rating: movie.rating,
+                    title: movie.title,
+                    summary: movie.summary,
+                    posterUrl: movie.posterUrl,
+                    movieId: movie.movieId,
+                    genres: movie.genres,
+                    videoUrl: movie.videoUrl,
+                    _id: movie._id,
+                };
+
+                fetch('http://localhost:8000/api/library', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log('Post response:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+            };
+
+            // Add event listener to the button
+
+            libraryButton.addEventListener('click', handlePostButtonClick);
 
             openModal.addEventListener('click', () => {
                 // Set the video URL
@@ -76,32 +114,5 @@ function fetchSingleMovie() {
             console.error('Error:', error);
         });
 }
-
-// const handlePostButtonClick = () => {
-//     const postUrl = 'http://localhost:8000/api/library';
-
-//     const payload = {
-//         userId: currentUserId,
-//     };
-
-//     fetch(postUrl, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(payload),
-//     })
-//         .then((response) => response.json())
-//         .then((data) => {
-//             console.log('Post response:', data);
-//         })
-//         .catch((error) => {
-//             console.error('Error:', error);
-//         });
-// };
-
-// // Add event listener to the button
-
-// libraryButton.addEventListener('click', handlePostButtonClick);
 
 fetchSingleMovie();

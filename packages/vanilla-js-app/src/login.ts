@@ -11,13 +11,14 @@ const loginForm = document.getElementById('login-form');
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent the form from submitting and page refresh
 
-    const email = emailInput.value;
-    const password = passwordInput.value;
+    const email = emailInput?.value;
+    const password = passwordInput?.value;
 
     // Sign in with email and password
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential: { user: any }) => {
             // User signed in successfully
+
             localStorage.setItem('currentUser', JSON.stringify(userCredential.user.email));
             localStorage.setItem('currentUserId', JSON.stringify(userCredential.user.uid));
             console.log(userCredential);
