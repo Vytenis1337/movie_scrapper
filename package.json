@@ -4,7 +4,7 @@
     "scripts": {
         "build": "lerna run build",
         "lint": "npx eslint ./packages",
-        "bootstrap": "npx lerna bootstrap && yarn build && npx jetify",
+        "bootstrap": "npx lerna bootstrap && npx jetify && yarn build",
         "bootstrap-clean": "rm -rf ./node_modules; npx lerna clean --yes && yarn bootstrap",
         "tsc": "tsc --build",
         "test": "jest --coverage",
@@ -49,14 +49,7 @@
             "packages/*"
         ],
         "nohoist": [
-            "react-native",
-            "**/@types",
-            "metro",
-            "**/@types/**",
-            "**/@react-native-community",
-            "**/@react-native-community/**",
-            "react-native-codegen",
-            "**/react-native-codegen"
+            "**/@types"
         ]
     }
 }
