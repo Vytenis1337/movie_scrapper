@@ -5,10 +5,6 @@ const librarySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    _id: {
-        type: String,
-        required: true,
-    },
 
     movieId: {
         type: String,
@@ -31,6 +27,10 @@ const librarySchema = new mongoose.Schema({
         required: true,
     },
     title: {
+        type: String,
+        required: true,
+    },
+    singleMovieId: {
         type: String,
         required: true,
     },
