@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Document } from 'mongoose';
 
 const { Schema } = mongoose;
 
@@ -50,5 +50,18 @@ const LibrarySchema = new Schema({
 });
 
 const modelName = mongoose.models.Library || mongoose.model('Library', LibrarySchema);
+
+export interface ILibrarySchema extends Document {
+    summary: string;
+    title: string;
+    movieId: string;
+    posterUrl: string;
+    videoUrl: string;
+    genres: string[];
+    rating: number;
+    year: string;
+    userId: string;
+    singleMovieId: string;
+}
 
 export default modelName;

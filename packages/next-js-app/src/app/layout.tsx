@@ -2,9 +2,12 @@ import { Metadata } from 'next';
 
 import { Inter, Roboto, Poppins } from 'next/font/google';
 import './globals.css';
-import Providers from 'src/utils/provider';
+import Providers from 'src/providers/react-query-provider';
 import Navbar from 'src/components/navbar/Navbar';
 import Footer from 'src/components/footer/Footer';
+import { AuthProvider } from 'src/providers/auth-context-provider';
+import { Toaster } from 'sonner';
+import { ChakraProviders } from 'src/providers/chakra-ui-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,12 +27,17 @@ export default function RootLayout({
         <html lang="en">
             <body className={inter.className}>
                 <Providers>
-                    <div className="container">
-                        <Navbar />
-                        {children}
-                        <Footer />
-                    </div>
+                    <ChakraProviders>
+                        <AuthProvider>
+                            <div className="container">
+                                <Navbar />
+                                {children}
+                                <Footer />
+                            </div>
+                        </AuthProvider>
+                    </ChakraProviders>
                 </Providers>
+                <Toaster position="top-right" richColors />
             </body>
         </html>
     );

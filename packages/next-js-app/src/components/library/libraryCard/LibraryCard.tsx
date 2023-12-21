@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react';
 import styles from './page.module.css';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import Link from 'next/link';
@@ -10,6 +11,18 @@ const LibraryCard = ({ _id, posterUrl, title, singleMovieId }: LibraryCardProps)
     const mutation = useMutation({
         mutationFn: (id) => {
             return newRequest.delete(`/library/${id}`);
+        },
+        onMutate: (id) => {
+            // Snapshot the current state of the library list
+            const previousLibrary = queryClient.getQueryData(['myLibrary']);
+
+            // Optimistically update the UI by removing the item from the library list
+            queryClient.setQueryData(['myLibrary'], (oldData: any) => {
+                return oldData.filter((item: { _id: any }) => item._id !== id);
+            });
+
+            // Return a function to rollback the optimistic update if the mutation fails
+            return () => queryClient.setQueryData(['myLibrary'], previousLibrary);
         },
         onSuccess: () => {
             queryClient.invalidateQueries(['myLibrary']);
@@ -30,11 +43,19 @@ const LibraryCard = ({ _id, posterUrl, title, singleMovieId }: LibraryCardProps)
 
                 <div className={styles.library_buttons}>
                     <Link href={`/movies/${singleMovieId}`}>
-                        <button className={styles.library_button_details}>Details</button>
+                        <Button color="#89abe3" variant="outline">
+                            Details
+                        </Button>
                     </Link>
-                    <button onClick={() => handleDelete(_id)} className={styles.library_button_remove}>
+
+                    <Button
+                        color="red"
+                        variant="solid"
+                        onClick={() => handleDelete(_id)}
+                        className={styles.library_button_remove}
+                    >
                         Remove
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>

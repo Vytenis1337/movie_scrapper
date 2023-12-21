@@ -2,13 +2,14 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export type MovieCardProps = {
-    movieId: number;
-    _id: number;
+    movieId: string;
+    _id: string;
     title: string;
     posterUrl: string;
+    rating: number;
 };
 
-const MovieCard = ({ movieId, title, posterUrl, _id }: MovieCardProps) => {
+const MovieCard = ({ movieId, title, posterUrl, _id, rating }: MovieCardProps) => {
     return (
         <div className={styles.movie_card}>
             <div className={styles.body}>
@@ -23,6 +24,7 @@ const MovieCard = ({ movieId, title, posterUrl, _id }: MovieCardProps) => {
                         alt={title}
                     />
                 </Link>
+                <p>IMDB rating: {rating}</p>
             </div>
         </div>
     );

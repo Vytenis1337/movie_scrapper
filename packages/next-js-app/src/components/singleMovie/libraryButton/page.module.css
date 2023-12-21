@@ -1,0 +1,27 @@
+.library_button {
+    background-color: #d98e20;
+    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: black 4px 4px 0 0;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    width: max-content;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border: 1px solid transparent;
+}
+.library_button:hover {
+    border: 1px solid white;
+
+    color: black;
+}
+.library_button:disabled {
+    color: red;
+}

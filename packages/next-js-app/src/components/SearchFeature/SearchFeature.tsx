@@ -1,43 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import newRequest from 'src/utils/newRequest';
 import styles from './page.module.css';
 
-// async function getData(category: any) {
-//     const res = await fetch(`http://localhost:3000/api/movies?genres=${category}`);
+const SearchFeature = ({ setSearch, setSelectedCategory, activeCategory, setActiveCategory, setCurrentPage }: any) => {
+    const { isLoading, error, data } = useQuery({
+        queryKey: ['movieCategories'],
+        queryFn: () =>
+            newRequest.get(`/movies`).then((res) => {
+                return res.data;
+            }),
+    });
 
-//     if (!res.ok) {
-//         throw new Error('Failed to fetch data');
-//     }
+    const categories = [...new Set(data?.map((item: { genres: string[] }) => item.genres))];
 
-//     return res.json();
-// }
+    const uniqueCategories: string[] | unknown[] = [...new Set(categories?.flat())];
 
-async function fetchCategoryData(category: any) {
-    const response = await fetch(`http://localhost:3000/api/movies?genres=${category}`);
-    const catData = await response.json();
-    return catData;
-}
-
-const SearchFeature = ({ data }: any) => {
-    const [activeCategory, setActiveCategory] = useState(null);
-
-    const categories = [...new Set(data?.map((item: { genres: any }) => item.genres))];
-
-    const uniqueCategories: any = [...new Set(categories?.flat())];
-
-    const handleClick = async (event: React.MouseEvent<HTMLButtonElement>, category: any) => {
+    const handleClick = async (event: React.MouseEvent<HTMLButtonElement>, category: string) => {
         event.preventDefault();
         const element = event.currentTarget as HTMLInputElement;
-        const value: any = element.textContent;
-        const search = await fetchCategoryData(category);
-        console.log(search);
-
+        const value = element.textContent;
+        setSearch('');
+        setSelectedCategory(value);
         setActiveCategory(category);
+        setCurrentPage(1);
     };
 
-    const handleClickAll = (all: any) => {
+    const handleClickAll = (all: string) => {
+        setSearch('');
+        setSelectedCategory('');
         setActiveCategory(all);
+        setCurrentPage(1);
     };
 
     return (
@@ -47,8 +41,7 @@ const SearchFeature = ({ data }: any) => {
                 className={styles.search_input}
                 type="text"
                 placeholder="Search Movie..."
-
-                // onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => setSearch(e.target.value)}
             />
             <div className={styles.search_categories}>
                 <button

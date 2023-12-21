@@ -1,0 +1,22 @@
+.home_button {
+    font-family: 'Share Tech Mono', monospace;
+    min-width: 200px;
+    font-size: 20px;
+    font-weight: 600;
+    background: #fff;
+    border: none;
+    padding: 30px 60px;
+    transition: all 0.3s ease-out;
+    box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #89abe3, 2px 2px 0 0 #89abe3, 3px 3px 0 0 #89abe3,
+        4px 4px 0 0 #89abe3, 5px 5px 0 0 #89abe3, 6px 6px 0 0 #89abe3, 7px 7px 0 0 #89abe3, 8px 8px 0 0 #89abe3,
+        9px 9px 0 0 #89abe3, 10px 10px 0 0 #89abe3, 11px 11px 0 0 #89abe3, 12px 12px 0 0 #89abe3;
+}
+.home_button:hover {
+    box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #ea738d, 2px 2px 0 0 #ea738d, 3px 3px 0 0 #ea738d,
+        4px 4px 0 0 #ea738d, 5px 5px 0 0 #ea738d, 6px 6px 0 0 #ea738d, 7px 7px 0 0 #ea738d, 8px 8px 0 0 #ea738d,
+        9px 9px 0 0 #ea738d, 10px 10px 0 0 #ea738d, 11px 11px 0 0 #ea738d, 12px 12px 0 0 #ea738d;
+}
+.home_button:active {
+    box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #ea738d, 2px 2px 0 0 #ea738d, 3px 3px 0 0 #ea738d,
+        4px 4px 0 0 #ea738d, 5px 5px 0 0 #ea738d;
+}

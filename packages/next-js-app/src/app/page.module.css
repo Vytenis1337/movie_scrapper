@@ -1,10 +1,9 @@
 .home {
     min-height: 100vh;
-    background-color: #000;
-
+    background: grey;
     display: grid;
     place-content: center;
-    padding: 1rem;
+    padding: 16px;
 }
 
 .home_content {
@@ -24,16 +23,16 @@
     border: none;
     padding: 30px 60px;
     transition: all 0.3s ease-out;
-    box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #d98e20, 2px 2px 0 0 #d98e20, 3px 3px 0 0 #d98e20,
-        4px 4px 0 0 #d98e20, 5px 5px 0 0 #d98e20, 6px 6px 0 0 #d98e20, 7px 7px 0 0 #d98e20, 8px 8px 0 0 #d98e20,
-        9px 9px 0 0 #d98e20, 10px 10px 0 0 #d98e20, 11px 11px 0 0 #d98e20, 12px 12px 0 0 #d98e20;
+    box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #ea738d, 2px 2px 0 0 #ea738d, 3px 3px 0 0 #ea738d,
+        4px 4px 0 0 #ea738d, 5px 5px 0 0 #ea738d, 6px 6px 0 0 #ea738d, 7px 7px 0 0 #ea738d, 8px 8px 0 0 #ea738d,
+        9px 9px 0 0 #ea738d, 10px 10px 0 0 #ea738d, 11px 11px 0 0 #ea738d, 12px 12px 0 0 #ea738d;
 }
 .home_button:hover {
-    box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #00bbf0, 2px 2px 0 0 #00bbf0, 3px 3px 0 0 #00bbf0,
-        4px 4px 0 0 #00bbf0, 5px 5px 0 0 #00bbf0, 6px 6px 0 0 #00bbf0, 7px 7px 0 0 #00bbf0, 8px 8px 0 0 #00bbf0,
-        9px 9px 0 0 #00bbf0, 10px 10px 0 0 #00bbf0, 11px 11px 0 0 #00bbf0, 12px 12px 0 0 #00bbf0;
+    box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #89abe3, 2px 2px 0 0 #89abe3, 3px 3px 0 0 #89abe3,
+        4px 4px 0 0 #89abe3, 5px 5px 0 0 #89abe3, 6px 6px 0 0 #89abe3, 7px 7px 0 0 #89abe3, 8px 8px 0 0 #89abe3,
+        9px 9px 0 0 #89abe3, 10px 10px 0 0 #89abe3, 11px 11px 0 0 #89abe3, 12px 12px 0 0 #89abe3;
 }
 .home_button:active {
-    box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #d98e20, 2px 2px 0 0 #d98e20, 3px 3px 0 0 #d98e20,
-        4px 4px 0 0 #d98e20, 5px 5px 0 0 #d98e20;
+    box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #89abe3, 2px 2px 0 0 #89abe3, 3px 3px 0 0 #89abe3,
+        4px 4px 0 0 #89abe3, 5px 5px 0 0 #89abe3;
 }

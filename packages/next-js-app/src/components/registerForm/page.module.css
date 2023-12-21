@@ -1,0 +1,52 @@
+.auth_form {
+    margin: auto;
+    width: 360px;
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.auth_h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: black;
+    font-family: Prata;
+}
+
+.auth_label {
+    font-size: 18px;
+    color: #d98e20;
+}
+
+.auth_input {
+    padding: 25px;
+    border: 1px solid rgb(216, 214, 214);
+}
+
+.auth p {
+    color: white;
+}
+.auth p span {
+    color: #d98e20;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.auth_button {
+    top: 0;
+    left: 0;
+    transition: all 0.15s linear 0s;
+    position: relative;
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #ffd700;
+
+    text-transform: uppercase;
+    color: brown;
+    font-family: arial;
+    letter-spacing: 1px;
+
+    box-shadow: -6px 6px 0 #404040;
+    text-decoration: none;
+}

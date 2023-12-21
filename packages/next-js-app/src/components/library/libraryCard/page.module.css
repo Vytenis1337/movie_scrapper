@@ -5,19 +5,14 @@
     background: transparent;
     max-height: 250px;
     overflow: hidden;
-    background: linear-gradient(#141e30, #243b55);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    border: 2px solid #d98e20;
+
+    border: 2px solid #89abe3;
     width: 100%;
 }
 
-.library_card:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
 .library_img {
-    min-width: 150px;
-    max-height: 200px;
+    min-width: 200px;
+    max-height: 300px;
 }
 
 .library_body {
@@ -30,7 +25,7 @@
 .library_title {
     font-size: 20px;
     font-weight: bold;
-    color: #d98e20;
+    color: #ea738d;
     font-family: 'Share Tech Mono', monospace;
 }
 .library_buttons {
@@ -39,54 +34,13 @@
     margin: 20px;
 }
 .library_button_details {
-    background-color: #ffd700;
-    border: 2px solid black;
-    border-radius: 5px;
     box-shadow: black 4px 4px 0 0;
-    color: black;
-    cursor: pointer;
-    padding: 5px;
-    font-weight: 600;
-    font-size: 18px;
-    width: max-content;
-    line-height: 20px;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    border: 1px solid transparent;
 }
 
 .library_button_remove {
-    background-color: #f95959;
-    border: 2px solid black;
-    border-radius: 30px;
     box-shadow: black 4px 4px 0 0;
-    color: black;
-    cursor: pointer;
-    padding: 5px;
-    font-weight: 600;
-    font-size: 18px;
-    width: max-content;
+
     margin: 10px auto;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    border: 1px solid transparent;
-}
-.library_button_details:hover {
-    border: 1px solid white;
-
-    color: black;
-}
-
-.library_button_remove:hover {
-    border: 1px solid white;
-
-    color: black;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

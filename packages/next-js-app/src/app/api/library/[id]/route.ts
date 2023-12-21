@@ -1,8 +1,14 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import libraryModel from 'src/models/library.model';
 import connect from 'src/utils/db';
 
-export const DELETE = async (request: any, { params }: any) => {
+type PageProps = {
+    params: {
+        id: string;
+    };
+};
+
+export const DELETE = async (req: NextRequest, { params }: PageProps) => {
     const { id } = params;
 
     try {

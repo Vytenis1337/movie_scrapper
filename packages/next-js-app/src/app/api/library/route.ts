@@ -1,15 +1,23 @@
-import { NextResponse } from 'next/server';
-import libraryModel from 'src/models/library.model';
+import { NextRequest, NextResponse } from 'next/server';
+import { LibraryType, librarySchema } from 'src/lib/validators/movie-validator';
+import libraryModel, { ILibrarySchema } from 'src/models/library.model';
 import connect from 'src/utils/db';
 
-export const POST = async (request: { json: () => any }) => {
-    
-    const body = await request.json();
+// export interface LibraryApiRequest extends NextApiRequest {
+//     body: TypeOf<typeof librarySchema>;
+// }
 
-    const newPost = new libraryModel(body);
-
+export const POST = async (request: NextRequest) => {
     try {
         await connect();
+        const body: unknown = await request.json();
+
+        const validatedBody = librarySchema.parse(body);
+
+        console.log('BODY IS:', body);
+        console.log('VALIDATED BODY IS:', validatedBody);
+
+        const newPost: ILibrarySchema = new libraryModel(validatedBody);
 
         await newPost.save();
 
@@ -19,7 +27,7 @@ export const POST = async (request: { json: () => any }) => {
     }
 };
 
-export const GET = async (request: any) => {
+export const GET = async (request: NextRequest) => {
     // const url = new URL(request.url);
 
     // const username = url.searchParams.get("username");

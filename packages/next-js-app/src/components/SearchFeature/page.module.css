@@ -9,7 +9,7 @@
     height: 40px;
     width: 250px;
     margin: auto;
-    border: 2px solid #d98e20;
+    border: 2px solid #00539c;
     border-radius: 10px;
 }
 
@@ -22,9 +22,9 @@
 
 .categories_button {
     background-color: transparent;
-    border: 2px solid #d98e20;
+    /* border: 2px solid #d98e20; */
     border-radius: 10px;
-    color: #d98e20;
+    color: #89abe3;
     cursor: pointer;
     display: flex;
     align-self: center;
@@ -37,24 +37,12 @@
     text-align: center;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-}
-.categories_button:hover,
-.categories_button:focus,
-.active_category:hover,
-.active_category:focus,
-.all_button:hover,
-.all_buton:focus {
-    color: white;
-    outline: 0;
-    box-shadow: 0 0 40px 40px transparent inset;
 }
 
 .active_category {
-    background-color: transparent;
-    border: 2px solid #3498db;
-    border-radius: 10px;
-    color: #3498db;
+    border-bottom: 2px solid #ea738d;
+    border-radius: 5px;
+    color: #ea738d;
     cursor: pointer;
     display: flex;
     align-self: center;
@@ -67,14 +55,13 @@
     text-align: center;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
 
 .all_button {
     background-color: transparent;
-    border: 2px solid #d98e20;
+    /* border: 2px solid #d98e20; */
     border-radius: 10px;
-    color: #d98e20;
+    color: #89abe3;
     cursor: pointer;
     display: flex;
     align-self: center;
@@ -92,9 +79,9 @@
 
 .active_all {
     background-color: transparent;
-    border: 2px solid #3498db;
-    border-radius: 10px;
-    color: #3498db;
+    border-bottom: 2px solid #ea738d;
+    border-radius: 5px;
+    color: #ea738d;
     cursor: pointer;
     display: flex;
     align-self: center;
@@ -107,5 +94,14 @@
     text-align: center;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+@media screen and (max-width: 650px) {
+    .search_feature {
+        margin: 0;
+    }
+    .search_categories {
+        gap: 0;
+        margin: 0;
+    }
 }

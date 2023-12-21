@@ -1,0 +1,35 @@
+.navbar_menu_library_link {
+    position: relative;
+}
+
+.navbar_library_count {
+    background: #89abe3;
+    border-radius: 50%;
+    color: black;
+
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    top: 0;
+    right: -13px;
+}
+
+.navbar_library_count_none {
+    display: none;
+}
+
+.navbar_library_count_number {
+    display: flex;
+
+    padding: 0 1px;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar_menu_library_link_closed {
+        display: none;
+    }
+
+    .navbar_library_count {
+        right: -16px;
+    }
+}

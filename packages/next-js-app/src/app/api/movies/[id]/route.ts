@@ -1,8 +1,14 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import connect from '../../../../utils/db';
 import movieModel from 'src/models/movie.model';
 
-export const GET = async (request: any, { params }: any) => {
+type PageProps = {
+    params: {
+        id: string;
+    };
+};
+
+export const GET = async (req: NextRequest, { params }: PageProps) => {
     const { id } = params;
     try {
         await connect();
