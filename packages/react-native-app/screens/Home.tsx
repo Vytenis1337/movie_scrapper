@@ -14,6 +14,8 @@ export default function HomeScreen({props, setUser, navigation, user}: any) {
     }
   };
 
+  
+
   return (
     <View style={styles.container}>
       <View style={styles.top}>
