@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import SearchFeature from 'src/components/searchFeature/SearchFeature';
+import SearchFeature from 'src/components/SearchFeature/SearchFeature';
 import newRequest from 'src/utils/newRequest';
 import MovieCard, { MovieCardProps } from '../movieCard/MovieCard';
 import styles from './page.module.css';
@@ -47,7 +47,7 @@ const MoviesSection = () => {
     return (
         <>
             {error ? (
-                <p>Oh no, there was an error</p>
+                <p>Oh no, there was an error!</p>
             ) : isLoading ? (
                 <div className={styles.movie_section}>
                     <Spinner margin="auto" size="xl" />
