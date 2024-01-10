@@ -1,9 +1,9 @@
 import modelName from 'src/models/movie.model';
 import connect from '../../../utils/db';
 
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export const GET = async (request: { url: string | URL; json: () => any }) => {
+export const GET = async (request: NextRequest) => {
     const url = new URL(request.url);
 
     const chosenGenres = url.searchParams.get('genres');
