@@ -38,7 +38,7 @@
 .back_button {
     margin: auto 0;
 
-    color: black;
+    color: #8aaae5;
     cursor: pointer;
     border-radius: 50%;
     font-weight: 600;
@@ -54,14 +54,14 @@
 }
 
 .back_button:hover {
-    border: 1px solid #d98e20;
+    border: 1px solid #ea738d;
 
-    color: black;
+    color: #ea738d;
 }
 .single_h1 {
     font-size: 50px;
 
-    color: #101820;
+    color: #ea738d;
     text-align: center;
 
     /* box-shadow: #eea47f 4px 4px 0 0; */
@@ -69,7 +69,7 @@
 
 .single_release {
     font-size: 18px;
-    color: #101820;
+    color: #8aaae5;
     text-align: left;
 }
 
@@ -117,7 +117,7 @@
 
     font-size: 20px;
     line-height: 30px;
-    color: black;
+    color: #8aaae5;
     font-family: Dejavu Sans, Arial, Verdana, sans-serif;
 }
 .single_rating {
@@ -134,7 +134,7 @@
 .single_movie_rating_span {
     font-weight: normal;
     padding: 5px;
-    color: black;
+    color: #8aaae5;
 }
 
 .single_bottom_section {
@@ -143,31 +143,6 @@
 
 .single_bottom_trailer {
     margin-top: 20px;
-}
-
-.watch_button {
-    background-color: #00bbf0;
-    border: 2px solid black;
-    border-radius: 10px;
-    box-shadow: black 4px 4px 0 0;
-    color: black;
-    cursor: pointer;
-    padding: 10px;
-    font-weight: 600;
-    font-size: 18px;
-    width: max-content;
-    margin: 10px auto;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    border: 1px solid transparent;
-}
-.watch_button:hover {
-    border: 1px solid white;
-
-    color: black;
 }
 
 .single_menu {

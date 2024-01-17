@@ -12,7 +12,7 @@ const MoviesPagination = ({ setCurrentPage, currentPage, visibleItems, itemsPerP
                 onClick={() => setCurrentPage((prev: number) => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
             >
-                <ArrowLeftIcon boxSize={6} />
+                <ArrowLeftIcon boxSize={6} color="#ea738d" />
             </button>
             <div className={styles.pagination}>
                 {/* Render pagination buttons */}
@@ -33,7 +33,7 @@ const MoviesPagination = ({ setCurrentPage, currentPage, visibleItems, itemsPerP
                 onClick={() => setCurrentPage((prev: number) => prev + 1)}
                 disabled={visibleItems.length < itemsPerPage}
             >
-                <ArrowRightIcon boxSize={6} />
+                <ArrowRightIcon boxSize={6} color="#ea738d" />
             </button>
         </div>
     );

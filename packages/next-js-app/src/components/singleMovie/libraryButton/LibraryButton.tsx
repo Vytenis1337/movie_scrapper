@@ -71,7 +71,7 @@ const LibraryButton = ({ data }: DataProps) => {
             ) : libraryData && currentUser !== null ? (
                 <Button
                     size="lg"
-                    color="#8aaae5"
+                    color="#ea738d"
                     variant="outline"
                     onClick={handleClick}
                     isDisabled={libraryData?.some((movie: LibraryCardProps) => movie.singleMovieId === data?._id)}

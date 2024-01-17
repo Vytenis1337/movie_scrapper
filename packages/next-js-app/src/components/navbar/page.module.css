@@ -67,7 +67,7 @@
     margin: 0 16px;
     font-size: 25px;
     font-weight: 700;
-    color: black;
+    color: #8aaae5;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -78,7 +78,7 @@
     margin: 0 16px;
     font-size: 25px;
     font-weight: 700;
-    color: black;
+    color: #8aaae5;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -89,7 +89,7 @@
 
 .hamburger {
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -99,6 +99,7 @@
 @media screen and (max-width: 768px) {
     .hamburger {
         display: inline-flex;
+        color: #ea738d;
     }
     .navbar_logo {
         position: absolute;
@@ -136,7 +137,7 @@
         margin: 5px 16px;
         font-size: 25px;
         font-weight: 700;
-        color: black;
+        color: #8aaae5;
         font-family: 'Montserrat', sans-serif;
     }
 

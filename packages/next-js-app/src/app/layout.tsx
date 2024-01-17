@@ -29,10 +29,12 @@ export default function RootLayout({
                 <Providers>
                     <ChakraProviders>
                         <AuthProvider>
-                            <div className="container">
-                                <Navbar />
-                                {children}
-                                <Footer />
+                            <div className="main">
+                                <div className="container">
+                                    <Navbar />
+                                    {children}
+                                    <Footer />
+                                </div>
                             </div>
                         </AuthProvider>
                     </ChakraProviders>

@@ -2,9 +2,9 @@
     text-decoration: none;
     font-family: 'Share Tech Mono', monospace;
     padding: 0 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
-    color: black;
+    color: #8aaae5;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -12,9 +12,9 @@
     text-decoration: none;
     font-family: 'Share Tech Mono', monospace;
     padding: 0 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
-    color: black;
+    color: #8aaae5;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -51,7 +51,7 @@
 
 .username {
     position: absolute;
-    color: black;
+    color: #89abe3;
     font-size: 40px;
     bottom: -5px;
     right: 13px;

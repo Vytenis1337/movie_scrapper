@@ -8,15 +8,15 @@
 }
 .auth_h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 20px;
-    color: black;
+    color: #ea738d;
     font-family: Prata;
 }
 
 .auth_label {
     font-size: 18px;
-    color: #d98e20;
+    color: #ea738d;
 }
 
 .auth_input {
@@ -24,29 +24,15 @@
     border: 1px solid rgb(216, 214, 214);
 }
 
-.auth p {
-    color: white;
+.auth_form p {
+    color: #89abe3;
 }
-.auth p span {
-    color: #d98e20;
+.auth_form p span {
+    color: #ea738d;
     text-decoration: none;
     font-size: 20px;
 }
 
-.auth_button {
-    top: 0;
-    left: 0;
-    transition: all 0.15s linear 0s;
-    position: relative;
-    display: inline-block;
-    padding: 15px 25px;
-    background-color: #ffd700;
-
-    text-transform: uppercase;
-    color: brown;
-    font-family: arial;
-    letter-spacing: 1px;
-
-    box-shadow: -6px 6px 0 #404040;
-    text-decoration: none;
+.auth_form p span:hover {
+    text-decoration: underline;
 }

@@ -66,7 +66,7 @@ const RegisterForm = () => {
                 <InputLeftElement pointerEvents="none">
                     <EmailIcon color="gray.300" boxSize={6} />
                 </InputLeftElement>
-                <Input {...register('email')} placeholder="you@example.com" size="lg" />
+                <Input {...register('email')} placeholder="you@example.com" size="lg" color="#89abe3" />
             </InputGroup>
             {errors?.email && <p>{errors.email.message}</p>}
 
@@ -77,6 +77,7 @@ const RegisterForm = () => {
                 <Input
                     pr="4.5rem"
                     size="lg"
+                    color="#89abe3"
                     type={show ? 'text' : 'password'}
                     {...register('password')}
                     placeholder="Password"
@@ -97,6 +98,7 @@ const RegisterForm = () => {
                     pr="4.5rem"
                     size="lg"
                     type={show ? 'text' : 'password'}
+                    color="#89abe3"
                     {...register('password')}
                     placeholder="Password"
                 />
@@ -108,7 +110,7 @@ const RegisterForm = () => {
             </InputGroup>
             {/* <input {...register('confirmPassword')} className={styles.auth_input} type="password" /> */}
             {errors?.confirmPassword && <p>{errors.confirmPassword.message}</p>}
-            <Button colorScheme="teal" variant="outline" size="lg" marginTop={10}>
+            <Button color="#89abe3" variant="outline" size="lg" marginTop={10}>
                 Register
             </Button>
             {/* <button className={styles.auth_button}>Register</button> */}

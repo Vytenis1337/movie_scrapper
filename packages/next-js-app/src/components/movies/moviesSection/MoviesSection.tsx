@@ -49,8 +49,8 @@ const MoviesSection = () => {
             {error ? (
                 <p>Oh no, there was an error!</p>
             ) : isLoading ? (
-                <div className={styles.movie_section}>
-                    <Spinner margin="auto" size="xl" />
+                <div className={styles.movie_section_loading}>
+                    <Spinner margin="auto" size="xl" color="#ea738d" />
                 </div>
             ) : data ? (
                 <div className={styles.movie_section}>

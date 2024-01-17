@@ -5,6 +5,11 @@
     padding: 25px;
 }
 
+.movie_section_loading {
+    height: 100vh;
+    margin: auto;
+}
+
 .search {
     margin: auto;
 }

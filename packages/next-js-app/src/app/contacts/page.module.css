@@ -1,0 +1,23 @@
+.contacts {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.contacts_icons {
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 730px) {
+    .contacts {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+    }
+    .contacts_icons {
+        display: flex;
+        flex-direction: row;
+    }
+}

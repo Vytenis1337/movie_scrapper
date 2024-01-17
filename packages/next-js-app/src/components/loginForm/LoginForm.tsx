@@ -46,7 +46,7 @@ const LoginForm = () => {
                 <InputLeftElement pointerEvents="none">
                     <EmailIcon color="gray.300" boxSize={6} />
                 </InputLeftElement>
-                <Input {...register('email')} placeholder="you@example.com" size="lg" />
+                <Input {...register('email')} placeholder="you@example.com" size="lg" color="#89abe3" />
             </InputGroup>
             {/* <input {...register('email')} className={styles.login_input} placeholder="you@example.com" />
             {errors?.email && <p>{errors.email.message}</p>} */}
@@ -59,6 +59,7 @@ const LoginForm = () => {
                 <Input
                     pr="4.5rem"
                     size="lg"
+                    color="#89abe3"
                     type={show ? 'text' : 'password'}
                     {...register('password')}
                     placeholder="Password"
@@ -73,7 +74,7 @@ const LoginForm = () => {
             {/* <input {...register('password')} type="password" className={styles.login_input} placeholder="Password" /> */}
             {errors?.password && <p>{errors.password.message}</p>}
 
-            <Button colorScheme="teal" variant="outline" size="lg" marginTop={10} type="submit">
+            <Button color="#89abe3" variant="outline" size="lg" marginTop={10} type="submit">
                 Login
             </Button>
             {/* <button className={styles.login_button}>Login</button> */}
