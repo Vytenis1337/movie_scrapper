@@ -3,6 +3,7 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import newRequest from 'src/utils/newRequest';
 import styles from './page.module.css';
+import { Spinner } from '@chakra-ui/react';
 
 const SearchFeature = ({ setSearch, setSelectedCategory, activeCategory, setActiveCategory, setCurrentPage }: any) => {
     const { isLoading, error, data } = useQuery({
@@ -35,32 +36,44 @@ const SearchFeature = ({ setSearch, setSelectedCategory, activeCategory, setActi
     };
 
     return (
-        <div className={styles.search_feature}>
-            {' '}
-            <input
-                className={styles.search_input}
-                type="text"
-                placeholder="Search Movie..."
-                onChange={(e) => setSearch(e.target.value)}
-            />
-            <div className={styles.search_categories}>
-                <button
-                    className={activeCategory === 'all' ? styles.active_all : styles.all_button}
-                    onClick={() => handleClickAll('all')}
-                >
-                    All
-                </button>
-                {uniqueCategories?.map((category: any) => (
-                    <button
-                        className={activeCategory === `${category}` ? styles.active_category : styles.categories_button}
-                        onClick={(e) => handleClick(e, category)}
-                        key={category}
-                    >
-                        {category}
-                    </button>
-                ))}
-            </div>
-        </div>
+        <>
+            {error ? (
+                <p>Oh no, there was an error!</p>
+            ) : isLoading ? (
+                <div className={styles.movie_section_loading}>
+                    <Spinner margin="auto" size="xl" color="#ea738d" />
+                </div>
+            ) : data ? (
+                <div className={styles.search_feature}>
+                    {' '}
+                    <input
+                        className={styles.search_input}
+                        type="text"
+                        placeholder="Search Movie..."
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                    <div className={styles.search_categories}>
+                        <button
+                            className={activeCategory === 'all' ? styles.active_all : styles.all_button}
+                            onClick={() => handleClickAll('all')}
+                        >
+                            All
+                        </button>
+                        {uniqueCategories?.map((category: any) => (
+                            <button
+                                className={
+                                    activeCategory === `${category}` ? styles.active_category : styles.categories_button
+                                }
+                                onClick={(e) => handleClick(e, category)}
+                                key={category}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            ) : null}
+        </>
     );
 };
 

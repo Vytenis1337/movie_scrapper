@@ -28,7 +28,7 @@ export const socialIcons = [
     {
         id: 5,
         child: <FaLaptopHouse size={80} />,
-        color: '#506f86',
+        color: 'yellow',
         href: 'https://vytenisportfolio.netlify.app/',
     },
 ];

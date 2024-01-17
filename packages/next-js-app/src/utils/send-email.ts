@@ -1,3 +1,4 @@
+import { toast } from 'sonner';
 import { TMailValidator } from 'src/lib/validators/mail-validator';
 
 export function sendEmail(data: TMailValidator) {
@@ -9,9 +10,9 @@ export function sendEmail(data: TMailValidator) {
     })
         .then((res) => res.json())
         .then((response) => {
-            alert(response.message);
+            toast.success('email sent successfully!');
         })
         .catch((err) => {
-            alert(err);
+            toast.error(err);
         });
 }
