@@ -8,7 +8,7 @@ import MovieCard, { MovieCardProps } from './movieCard/MovieCard';
 import styles from './page.module.css';
 import MoviesPagination from './moviesPagination/MoviesPagination';
 import { Divider, Spinner } from '@chakra-ui/react';
-import SearchFeature from './searchFeature/SearchFeature';
+import { SearchFeature } from './searchFeature/SearchFeature';
 
 const MoviesSection = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>('');
