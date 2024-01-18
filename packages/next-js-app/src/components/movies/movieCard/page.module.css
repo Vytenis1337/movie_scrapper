@@ -1,3 +1,7 @@
 .body p {
     color: #ea738d;
 }
+
+.movie_card:hover {
+    transform: scale(1.05);
+}

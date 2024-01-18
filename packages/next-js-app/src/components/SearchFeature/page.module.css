@@ -96,6 +96,11 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.categories_button:hover,
+.all_button:hover {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 650px) {
     .search_feature {
         margin: 0;
