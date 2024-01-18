@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import SearchFeature from 'src/components/SearchFeature/SearchFeature';
+import SearchFeature from 'src/components/movies/SearchFeature/SearchFeature';
 import newRequest from 'src/utils/newRequest';
 import MovieCard, { MovieCardProps } from '../movieCard/MovieCard';
 import styles from './page.module.css';
