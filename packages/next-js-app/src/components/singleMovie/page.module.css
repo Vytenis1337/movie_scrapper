@@ -109,7 +109,7 @@
 
     padding: 5px 5px;
     display: flex;
-    display-direction: column;
+    flex-direction: column;
 }
 
 .single_p {
@@ -232,8 +232,7 @@
         display: flex;
         flex-direction: column;
     }
-    .single_top {
-    }
+
     .single_h1 {
         font-size: 30px;
     }

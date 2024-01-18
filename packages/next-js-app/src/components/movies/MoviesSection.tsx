@@ -18,7 +18,7 @@ const MoviesSection = () => {
     const fetchData = useCallback(async () => {
         try {
             const res = await newRequest.get(`/movies?genres=${selectedCategory}&search=${search}`);
-            console.log('the MOVIE DATA IS:', res.data);
+
             return res.data;
         } catch (error) {
             throw error;
