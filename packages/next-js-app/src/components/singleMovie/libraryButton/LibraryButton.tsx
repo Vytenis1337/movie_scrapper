@@ -6,7 +6,7 @@ import newRequest from 'src/utils/newRequest';
 import styles from './page.module.css';
 
 import { MovieType } from 'src/lib/validators/movie-validator';
-import { useFetchLibrary } from 'src/app/hooks/useFetchLibrary';
+import { useFetchLibrary } from 'src/hooks/useFetchLibrary';
 import { Button } from '@chakra-ui/react';
 
 type DataProps = {

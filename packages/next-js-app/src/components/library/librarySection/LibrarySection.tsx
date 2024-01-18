@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { BiArrowBack } from 'react-icons/bi';
 import { LibraryCardProps } from 'src/app/movies/[id]/page';
 import LibraryCard from '../libraryCard/LibraryCard';
-import { useFetchLibrary } from 'src/app/hooks/useFetchLibrary';
+import { useFetchLibrary } from 'src/hooks/useFetchLibrary';
 import { Spinner } from '@chakra-ui/react';
 
 const LibrarySection = () => {

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Dispatch, SetStateAction, useContext, useEffect } from 'react';
-import { useFetchLibrary } from 'src/app/hooks/useFetchLibrary';
+import { useFetchLibrary } from 'src/hooks/useFetchLibrary';
 import { AuthContext } from 'src/providers/auth-context-provider';
 import styles from './page.module.css';
 import { Spinner } from '@chakra-ui/react';
