@@ -1,5 +1,5 @@
 import { Metadata, ResolvingMetadata } from 'next';
-import SingleMovieSection from 'src/components/singleMovie/singleMovieSection/SingleMovieSection';
+import SingleMovieSection from 'src/components/singleMovie/SingleMovieSection';
 import styles from './page.module.css';
 
 export type LibraryCardProps = {

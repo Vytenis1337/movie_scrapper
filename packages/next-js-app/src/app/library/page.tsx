@@ -1,7 +1,7 @@
 import styles from './page.module.css';
 
 import { Metadata } from 'next';
-import LibrarySection from 'src/components/library/librarySection/LibrarySection';
+import LibrarySection from 'src/components/library/LibrarySection';
 
 export const metadata: Metadata = {
     title: 'Library Page',

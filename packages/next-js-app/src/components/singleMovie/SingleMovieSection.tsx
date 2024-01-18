@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { BiArrowBack } from 'react-icons/bi';
 import { movieSchema } from 'src/lib/validators/movie-validator';
 import newRequest from 'src/utils/newRequest';
-import LibraryButton from '../libraryButton/LibraryButton';
+import LibraryButton from './libraryButton/LibraryButton';
 import styles from './page.module.css';
 import { Button, Center, Divider, Spinner } from '@chakra-ui/react';
-import WatchTrailerModal from '../trailerModal/TrailerModal';
+import WatchTrailerModal from './trailerModal/TrailerModal';
 import { useState } from 'react';
 
 type PageProps = {

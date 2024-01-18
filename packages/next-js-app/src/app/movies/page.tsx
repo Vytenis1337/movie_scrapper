@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import MoviesSection from 'src/components/movies/moviesSection/MoviesSection';
+import MoviesSection from 'src/components/movies/MoviesSection';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
