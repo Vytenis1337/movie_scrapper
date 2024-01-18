@@ -5,7 +5,13 @@ import newRequest from 'src/utils/newRequest';
 import styles from './page.module.css';
 import { Spinner } from '@chakra-ui/react';
 
-const SearchFeature = ({ setSearch, setSelectedCategory, activeCategory, setActiveCategory, setCurrentPage }: any) => {
+export const SearchFeature = ({
+    setSearch,
+    setSelectedCategory,
+    activeCategory,
+    setActiveCategory,
+    setCurrentPage,
+}: any) => {
     const { isLoading, error, data } = useQuery({
         queryKey: ['movieCategories'],
         queryFn: () =>
@@ -76,5 +82,3 @@ const SearchFeature = ({ setSearch, setSelectedCategory, activeCategory, setActi
         </>
     );
 };
-
-export default SearchFeature;
