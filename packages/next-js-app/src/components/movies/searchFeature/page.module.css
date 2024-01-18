@@ -1,0 +1,112 @@
+.search_feature {
+    height: max-content;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search_input {
+    height: 40px;
+    width: 250px;
+    margin: auto;
+    border: 2px solid #00539c;
+    border-radius: 10px;
+}
+
+.search_categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 5px;
+}
+
+.categories_button {
+    background-color: transparent;
+    /* border: 2px solid #d98e20; */
+    border-radius: 10px;
+    color: #89abe3;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.active_category {
+    border-bottom: 2px solid #ea738d;
+    border-radius: 5px;
+    color: #ea738d;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.all_button {
+    background-color: transparent;
+    /* border: 2px solid #d98e20; */
+    border-radius: 10px;
+    color: #89abe3;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+
+    padding: 15px 20px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.active_all {
+    background-color: transparent;
+    border-bottom: 2px solid #ea738d;
+    border-radius: 5px;
+    color: #ea738d;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+
+    padding: 15px 20px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.categories_button:hover,
+.all_button:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 650px) {
+    .search_feature {
+        margin: 0;
+    }
+    .search_categories {
+        gap: 0;
+        margin: 0;
+    }
+}
