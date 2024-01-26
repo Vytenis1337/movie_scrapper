@@ -24,6 +24,9 @@
     display: flex;
     flex-direction: column;
 }
+.contacts_form_field p {
+    color: red;
+}
 
 .contacts_form_label {
     font-weight: 500;

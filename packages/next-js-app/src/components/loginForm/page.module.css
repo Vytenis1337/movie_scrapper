@@ -24,9 +24,14 @@
     border: 1px solid rgb(216, 214, 214);
 }
 
-.login_form p {
+.account {
     color: #89abe3;
 }
+
+.login_form p {
+    color: red;
+}
+
 .login_form span {
     color: #ea738d;
     text-decoration: none;

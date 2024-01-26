@@ -22,7 +22,7 @@ const RegisterForm = () => {
         register,
         handleSubmit,
         reset,
-        formState: { errors },
+        formState: { errors, isSubmitting },
     } = useForm<TRegisterValidator>({
         resolver: zodResolver(RegisterValidator),
     });
@@ -110,17 +110,17 @@ const RegisterForm = () => {
             </InputGroup>
             {/* <input {...register('confirmPassword')} className={styles.auth_input} type="password" /> */}
             {errors?.confirmPassword && <p>{errors.confirmPassword.message}</p>}
-            <Button color="#89abe3" variant="outline" size="lg" marginTop={10}>
-                Register
+            <Button disabled={isSubmitting} color="#89abe3" variant="outline" size="lg" marginTop={10} type="submit">
+                {isSubmitting ? 'Loading' : 'Register'}
             </Button>
             {/* <button className={styles.auth_button}>Register</button> */}
 
-            <p>
+            <div className={styles.account}>
                 Already have an account?{' '}
                 <Link href="/login" as="/login">
                     <span>Login</span>
                 </Link>
-            </p>
+            </div>
         </form>
     );
 };

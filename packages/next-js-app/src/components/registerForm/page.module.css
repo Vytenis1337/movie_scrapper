@@ -25,7 +25,7 @@
 }
 
 .auth_form p {
-    color: #89abe3;
+    color: red;
 }
 .auth_form p span {
     color: #ea738d;
@@ -35,4 +35,8 @@
 
 .auth_form p span:hover {
     text-decoration: underline;
+}
+
+.account {
+    color: #89abe3;
 }

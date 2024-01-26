@@ -17,7 +17,7 @@ const ContactForm = () => {
         register,
         handleSubmit,
         reset,
-        formState: { errors },
+        formState: { errors, isSubmitting },
     } = useForm<TMailValidator>({ resolver: zodResolver(MailValidator) });
 
     function onSubmit(data: TMailValidator) {
@@ -48,7 +48,7 @@ const ContactForm = () => {
                     type="email"
                     placeholder="example@domain.com"
                     className={styles.contacts_form_input}
-                    {...register('email', { required: true })}
+                    {...register('email')}
                 />
                 {errors?.email && <p>{errors.email.message}</p>}
             </div>
@@ -65,7 +65,9 @@ const ContactForm = () => {
                 {errors?.message && <p>{errors.message.message}</p>}
             </div>
             <div>
-                <button className={styles.contacts_form_button}>send message</button>
+                <button disabled={isSubmitting} className={styles.contacts_form_button}>
+                    {isSubmitting ? 'loading' : 'send message'}
+                </button>
             </div>
         </form>
 

@@ -11,7 +11,7 @@ import { Divider, Spinner } from '@chakra-ui/react';
 import { SearchFeature } from './searchFeature/SearchFeature';
 
 const MoviesSection = () => {
-    const [selectedCategory, setSelectedCategory] = useState<string>('');
+    const [selectedCategory, setSelectedCategory] = useState<string | null>('');
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [activeCategory, setActiveCategory] = useState<string>('all');
     const [search, setSearch] = useState<string>('');

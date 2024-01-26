@@ -18,7 +18,7 @@ const LoginForm = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors, isSubmitting },
     } = useForm<TLoginValidator>({
         resolver: zodResolver(LoginValidator),
     });
@@ -74,17 +74,17 @@ const LoginForm = () => {
             {/* <input {...register('password')} type="password" className={styles.login_input} placeholder="Password" /> */}
             {errors?.password && <p>{errors.password.message}</p>}
 
-            <Button color="#89abe3" variant="outline" size="lg" marginTop={10} type="submit">
-                Login
+            <Button disabled={isSubmitting} color="#89abe3" variant="outline" size="lg" marginTop={10} type="submit">
+                {isSubmitting ? 'Loading' : 'Login'}
             </Button>
             {/* <button className={styles.login_button}>Login</button> */}
             {/* {error && error} */}
-            <p>
+            <div className={styles.account}>
                 Don't have an account yet?{' '}
                 <Link as="/register" href="/register">
                     <span>Register</span>
                 </Link>
-            </p>
+            </div>
         </form>
     );
 };
