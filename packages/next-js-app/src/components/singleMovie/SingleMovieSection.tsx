@@ -27,6 +27,7 @@ const SingleMovieSection = ({ params }: PageProps) => {
     const handleCloseModal = () => {
         setModalOpen(false);
     };
+    console.log(params.id);
     const { isLoading, isFetching, error, data } = useQuery({
         queryKey: ['singleMovie'],
         queryFn: () =>
