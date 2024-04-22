@@ -12,11 +12,14 @@ export const GET = async (req: NextRequest, { params }: PageProps) => {
     const { id } = params;
     try {
         await connect();
-
         const movie = await movieModel.findById(id);
-
+        if (!movie) {
+            console.error(`Movie not found with id: ${id}`);
+            return new NextResponse('Movie not found', { status: 404 });
+        }
         return new NextResponse(JSON.stringify(movie), { status: 200 });
-    } catch (err) {
-        return new NextResponse('Database Error', { status: 500 });
+    } catch (error: any) {
+        console.error(`Error fetching movie with id ${id}: ${error.message}`);
+        return new NextResponse('Error fetching movie data', { status: 500 });
     }
 };
