@@ -23,7 +23,9 @@ type PageProps = {
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const movie = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/movies/${params.id}`).then((res) => res.json());
+    const movie = await fetch(`https://movie-scrapper-next-js-app.vercel.app/movies/${params.id}`).then((res) =>
+        res.json()
+    );
 
     return {
         title: movie.title,
