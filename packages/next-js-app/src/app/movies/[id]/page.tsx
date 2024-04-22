@@ -23,13 +23,22 @@ type PageProps = {
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const movie = await fetch(`https://movie-scrapper-next-js-app.vercel.app/movies/${params.id}`).then((res) =>
-        res.json()
-    );
+    const url = `${process.env.NEXT_PUBLIC_BASE_API_URL}/movies/${params.id}`;
+    try {
+        const response = await fetch(url);
+        const text = await response.text(); // Get response as text to avoid JSON parse error
 
-    return {
-        title: movie.title,
-    };
+        try {
+            const data = JSON.parse(text); // Try to parse text as JSON
+            return { title: data.title };
+        } catch (error) {
+            console.error('Failed to parse JSON:', text); // Log the raw text if parsing fails
+            throw error;
+        }
+    } catch (error) {
+        console.error('Network error:', error);
+        return { title: 'Network or parsing error' };
+    }
 }
 
 const SingleMovie = ({ params }: any) => {
