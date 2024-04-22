@@ -17,6 +17,28 @@ type PageProps = {
     };
 };
 
+const fetchMovieDetails = (movieId: any) => {
+    const baseUrl = 'https://movie-scrapper-next-js-app.vercel.app/movies'; // Get the base URL from environment variables
+    const url = `${baseUrl}/api/movies/${movieId}`; // Construct the full URL
+
+    return fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            const result = movieSchema.safeParse(data);
+            if (result.success) {
+                return result.data;
+            } else {
+                console.error('Data validation error', result.error);
+                throw new Error('Invalid data received from API');
+            }
+        });
+};
+
 const SingleMovieSection = ({ params }: PageProps) => {
     const [isModalOpen, setModalOpen] = useState(false);
 
@@ -31,16 +53,7 @@ const SingleMovieSection = ({ params }: PageProps) => {
     console.log(params.id);
     const { isLoading, isFetching, error, data } = useQuery({
         queryKey: ['singleMovie'],
-        queryFn: () =>
-            newRequest.get(`/movies/${params.id}`).then((res) => {
-                const result = movieSchema.safeParse(res.data);
-                if (result.success) {
-                    return result.data;
-                } else {
-                    console.error('Data validation error', result.error);
-                    throw new Error('Invalid data received from API');
-                }
-            }),
+        queryFn: () => fetchMovieDetails(params.id),
     });
 
     console.log(data);
