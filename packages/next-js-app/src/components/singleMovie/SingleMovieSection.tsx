@@ -27,6 +27,7 @@ const SingleMovieSection = ({ params }: PageProps) => {
     const handleCloseModal = () => {
         setModalOpen(false);
     };
+    console.log(process.env.NEXT_PUBLIC_BASE_API_URL);
     console.log(params.id);
     const { isLoading, isFetching, error, data } = useQuery({
         queryKey: ['singleMovie'],
@@ -36,8 +37,8 @@ const SingleMovieSection = ({ params }: PageProps) => {
                 if (result.success) {
                     return result.data;
                 } else {
-                    // Handle or throw error
-                    throw new Error('Invalid data');
+                    console.error('Data validation error', result.error);
+                    throw new Error('Invalid data received from API');
                 }
             }),
     });
