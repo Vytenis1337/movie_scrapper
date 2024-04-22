@@ -20,7 +20,7 @@ type PageProps = {
 const fetchMovieDetails = (movieId: string) => {
     const baseUrl = 'https://movie-scrapper-next-js-app.vercel.app'; // Get the base URL from environment variables
     const url = `${baseUrl}/api/movies/${movieId}`; // Construct the full URL
-
+    console.log('Fetching URL:', url);
     return fetch(url)
         .then((response) => {
             if (!response.ok) {
