@@ -44,7 +44,7 @@ const MoviesSection = () => {
     );
 
     const totalPages = useMemo(() => Math.ceil(data?.length / itemsPerPage), [data, itemsPerPage]);
-    console.log(search);
+
     return (
         <>
             {error ? (
@@ -66,16 +66,9 @@ const MoviesSection = () => {
                     </div>
                     <Divider />
                     <div className={styles.card_container}>
-                        {
-                            // filteredList
-                            //     ?.filter((item: { title: string }) => {
-                            //         return search.toLowerCase() === '' ? item : item.title.toLowerCase().includes(search);
-                            //     })
-                            //     ?
-                            visibleItems.map((movie: MovieCardProps) => (
-                                <MovieCard key={movie.movieId} {...movie} />
-                            ))
-                        }
+                        {visibleItems.map((movie: MovieCardProps) => (
+                            <MovieCard key={movie.movieId} {...movie} />
+                        ))}
                     </div>
                     <div className={styles.pagination_container}>
                         <MoviesPagination

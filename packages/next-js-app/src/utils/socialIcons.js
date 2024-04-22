@@ -1,12 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaSkype, FaLaptopHouse } from 'react-icons/fa';
 
 export const socialIcons = [
-    // {
-    //     id: 1,
-    //     child: <FaEnvelope size={80} />,
-    //     color: '#883c82',
-    //     href: 'mailto:vytenis.kondrackis@gmail.com',
-    // },
     {
         id: 2,
         child: <FaLinkedin size={80} />,

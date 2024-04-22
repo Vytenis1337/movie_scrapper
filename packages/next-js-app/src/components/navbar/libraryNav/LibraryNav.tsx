@@ -7,10 +7,6 @@ import { AuthContext } from 'src/providers/auth-context-provider';
 import styles from './page.module.css';
 import { Spinner } from '@chakra-ui/react';
 
-// type LibraryNavProps = {
-//     isNavExpanded: boolean;
-// };
-
 const LibraryNav = () => {
     const { currentUser } = useContext(AuthContext);
     const {

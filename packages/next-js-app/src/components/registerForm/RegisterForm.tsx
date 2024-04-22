@@ -39,7 +39,6 @@ const RegisterForm = () => {
                 return;
             }
             await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
-                console.log(userCredential);
                 toast.success(`Account successfully created.`);
                 router.push('/login');
                 reset();
@@ -61,7 +60,7 @@ const RegisterForm = () => {
             <label className={styles.auth_label} htmlFor="email">
                 Email
             </label>
-            {/* <input className={styles.auth_input} {...register('email')} type="email" /> */}
+            {}
             <InputGroup size="lg" marginBottom={5}>
                 <InputLeftElement pointerEvents="none">
                     <EmailIcon color="gray.300" boxSize={6} />
@@ -88,7 +87,7 @@ const RegisterForm = () => {
                     </Button>
                 </InputRightElement>
             </InputGroup>
-            {/* <input {...register('password')} className={styles.auth_input} type="password" /> */}
+            {}
             {errors?.password && <p>{errors.password.message}</p>}
             <label className={styles.auth_label} htmlFor="">
                 Confirm Password
@@ -108,12 +107,12 @@ const RegisterForm = () => {
                     </Button>
                 </InputRightElement>
             </InputGroup>
-            {/* <input {...register('confirmPassword')} className={styles.auth_input} type="password" /> */}
+            {}
             {errors?.confirmPassword && <p>{errors.confirmPassword.message}</p>}
             <Button disabled={isSubmitting} color="#89abe3" variant="outline" size="lg" marginTop={10} type="submit">
                 {isSubmitting ? 'Loading' : 'Register'}
             </Button>
-            {/* <button className={styles.auth_button}>Register</button> */}
+            {}
 
             <div className={styles.account}>
                 Already have an account?{' '}

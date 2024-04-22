@@ -15,7 +15,7 @@ const MoviesPagination = ({ setCurrentPage, currentPage, visibleItems, itemsPerP
                 <ArrowLeftIcon boxSize={6} color="#ea738d" />
             </button>
             <div className={styles.pagination}>
-                {/* Render pagination buttons */}
+                
                 {Array.from({ length: totalPages }).map((_, index) => (
                     <Button
                         size="md"

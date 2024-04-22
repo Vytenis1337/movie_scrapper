@@ -8,7 +8,7 @@ const WatchTrailerModal = ({ isOpen, onClose }: any) => {
                 <ModalHeader>Watch Trailer</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    {/* Your watch trailer section content goes here */}
+                    {}
                     <iframe
                         width="100%"
                         height="400"

@@ -26,13 +26,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const url = `${process.env.NEXT_PUBLIC_BASE_API_URL}/movies/${params.id}`;
     try {
         const response = await fetch(url);
-        const text = await response.text(); // Get response as text to avoid JSON parse error
+        const text = await response.text();
 
         try {
-            const data = JSON.parse(text); // Try to parse text as JSON
+            const data = JSON.parse(text);
             return { title: data.title };
         } catch (error) {
-            console.error('Failed to parse JSON:', text); // Log the raw text if parsing fails
+            console.error('Failed to parse JSON:', text);
             throw error;
         }
     } catch (error) {
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 }
 
-const SingleMovie = ({ params }: any) => {
+const SingleMovie = ({ params }: PageProps) => {
     return (
         <div className={styles.single}>
             <SingleMovieSection params={params} />

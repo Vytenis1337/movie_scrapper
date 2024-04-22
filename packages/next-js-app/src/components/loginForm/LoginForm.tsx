@@ -48,9 +48,8 @@ const LoginForm = () => {
                 </InputLeftElement>
                 <Input {...register('email')} placeholder="you@example.com" size="lg" color="#89abe3" />
             </InputGroup>
-            {/* <input {...register('email')} className={styles.login_input} placeholder="you@example.com" />
-            {errors?.email && <p>{errors.email.message}</p>} */}
-            {/* <Input {...register('email')} placeholder="you@example.com" size="lg" /> */}
+            {}
+            {}
             {errors?.email && <p>{errors.email.message}</p>}
             <label className={styles.login_label} htmlFor="">
                 Password
@@ -71,14 +70,14 @@ const LoginForm = () => {
                 </InputRightElement>
             </InputGroup>
 
-            {/* <input {...register('password')} type="password" className={styles.login_input} placeholder="Password" /> */}
+            {}
             {errors?.password && <p>{errors.password.message}</p>}
 
             <Button disabled={isSubmitting} color="#89abe3" variant="outline" size="lg" marginTop={10} type="submit">
                 {isSubmitting ? 'Loading' : 'Login'}
             </Button>
-            {/* <button className={styles.login_button}>Login</button> */}
-            {/* {error && error} */}
+            {}
+            {}
             <div className={styles.account}>
                 Don't have an account yet?{' '}
                 <Link as="/register" href="/register">

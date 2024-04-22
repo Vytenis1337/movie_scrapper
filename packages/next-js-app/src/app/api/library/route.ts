@@ -3,10 +3,6 @@ import { LibraryType, librarySchema } from 'src/lib/validators/movie-validator';
 import libraryModel, { ILibrarySchema } from 'src/models/library.model';
 import connect from 'src/utils/db';
 
-// export interface LibraryApiRequest extends NextApiRequest {
-//     body: TypeOf<typeof librarySchema>;
-// }
-
 export const POST = async (request: NextRequest) => {
     try {
         await connect();
@@ -28,10 +24,6 @@ export const POST = async (request: NextRequest) => {
 };
 
 export const GET = async (request: NextRequest) => {
-    // const url = new URL(request.url);
-
-    // const username = url.searchParams.get("username");
-
     try {
         await connect();
 

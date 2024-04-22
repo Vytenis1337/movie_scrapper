@@ -70,31 +70,6 @@ const ContactForm = () => {
                 </button>
             </div>
         </form>
-
-        // <form
-        //     className={styles.contacts_form}
-        //     action="https://formsubmit.co/vytenis.kondrackis@gmail.com"
-        //     method="POST"
-        // >
-        //     <h1>Write Me</h1>
-        //     <div className={styles.contacts_form_field}>
-        //         <label className={styles.contacts_form_label}>name</label>
-        //         <input required type="text" name="name" className={styles.contacts_form_input} />
-        //     </div>
-
-        //     <div className={styles.contacts_form_field}>
-        //         <label className={styles.contacts_form_label}>email</label>
-        //         <input required type="email" name="email" className={styles.contacts_form_input} />
-        //     </div>
-        //     <div className={styles.contacts_form_field}>
-        //         <label className={styles.contacts_form_label}>message</label>
-        //         <textarea required name="message" className={styles.contacts_form_input}></textarea>
-        //     </div>
-
-        //     <div>
-        //         <button className={styles.contacts_form_button}>send message</button>
-        //     </div>
-        // </form>
     );
 };
 

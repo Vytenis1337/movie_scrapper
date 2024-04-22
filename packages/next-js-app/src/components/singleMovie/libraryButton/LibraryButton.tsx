@@ -16,8 +16,6 @@ type DataProps = {
 const LibraryButton = ({ data }: DataProps) => {
     const { currentUser, setLibraryCount } = useContext(AuthContext);
 
-    console.log('CURRENT USER IS:', currentUser);
-
     const {
         isLoading: isLoadingLibrary,
         isFetching: isFetchingLibrary,

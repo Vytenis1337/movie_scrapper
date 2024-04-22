@@ -8,14 +8,6 @@ export const GET = async (request: NextRequest) => {
 
     const chosenGenres = url.searchParams.get('genres');
     const search = url.searchParams.get('search');
-    // const page: any = url.searchParams.get('page');
-    // const limit: any = url.searchParams.get('limit');
-
-    // console.log('genres are:', chosenGenres);
-    // console.log('page are:', page);
-    // console.log('limit are:', limit);
-
-    // const skip = (page - 1) * limit;
 
     const filters = {
         ...(chosenGenres && { genres: { $in: [chosenGenres] } }),

@@ -18,12 +18,6 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 
-// export const signInUser = async (email: string, password: string) => {
-//     if (!email && !password) return;
-
-//     return await signInWithEmailAndPassword(auth, email, password);
-// };
-
 export const userStateListener = (callback: NextOrObserver<User>) => {
     return onAuthStateChanged(auth, callback);
 };
